@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import VideoCardButtons from './VideoCardButtons'
 import Embeded from './Embeded'
 
-const VideoCard = ({ videos, setVideos }) => {
-  const removeVideo = (id) => {
-    const updatedResponse = videos.filter((video) => video.id !== id)
-    setVideos(updatedResponse)
-  }
+const VideoCard = ({ videos, setVideos, removeVideo }) => {
+  // const removeVideo = (id) => {
+  //   const updatedResponse = videos.filter((video) => video.id !== id)
+  //   setVideos(updatedResponse)
+  // }
 
   return (
     <div className="card-container">

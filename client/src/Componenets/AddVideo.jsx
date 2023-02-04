@@ -17,10 +17,13 @@ const AddVideo = ({ videos, setVideos }) => {
   const addToResponse = (e) => {
     e.preventDefault()
     const newVideo = {
-      id: uuid(),
       video_title: title,
       video_url: url,
     }
+
+    fetch('http://localhost:3001/videos', { method: 'post', body: newVideo })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
 
     const videosPlus = videos.concat(newVideo)
     setVideos(videosPlus)
